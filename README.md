@@ -10,7 +10,7 @@ This is an individual assessment. All work must be your own. Your challenge scor
 
 You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your Tead Lead and Instructor in your cohort help channel on Slack. Your work reflects your proficiency in Applied JavaScript.
 
-You have three hours to complete this challenge. Plan your time accordingly.
+You have three hours to complete `this` challenge. Plan your time accordingly.
 
 ## Commits
 
