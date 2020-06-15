@@ -18,6 +18,7 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
 let allArticles = []
 const articleArr = ["bootstrap", "javascript", "jquery", "node", "technology"]
 const cards = document.querySelector(".cards-container")
@@ -47,10 +48,8 @@ function innerHTML(el, card) {
 
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
-    // .then(response => console.log(response.data.articles))
     .then(response => {
         const data = response.data.articles
-        // loop throgh articles and call cardMaker for each article?
         return data
     })
     .then(data => {
@@ -60,12 +59,5 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
             })
         }
     })
-    // .then(() => {
-    //     // cardMaker(allArticles)
-    //     console.log(allArticles)
-    // })
-    // .then(result => {
-    //     cards.appendChild(cardMaker(result))
-    // }) 
 
     
