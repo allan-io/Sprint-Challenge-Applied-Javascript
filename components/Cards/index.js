@@ -18,18 +18,16 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
-const allArticles
+let allArticles = []
 const articleArr = ["bootstrap", "javascript", "jquery", "node", "technology"]
 const cards = document.querySelector(".cards-container")
-function cardMaker(dataArr) {
-
+function cardMaker(obj) {
+    
     const card = document.createElement("div")
     card.className = "card"
-    dataArr.forEach(el => {
-        innerHTML(el, card)
-    })
-    
-    return card
+    const result = innerHTML(obj, card)
+    cards.appendChild(result)
+
 }
 
 
@@ -44,6 +42,7 @@ function innerHTML(el, card) {
             <span>By ${el.authorName}</span>
             </div>
         `
+        return card
 }
 
 
@@ -55,11 +54,18 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
         return data
     })
     .then(data => {
-        articleArr.forEach(el => {
-            const result = cardMaker(data[el])
-            cards.appendChild(result)
-        })
+        for(key in data) {
+            data[key].forEach((el) => {
+                cardMaker(el)
+            })
+        }
     })
-    .then(result => {
-        cards.appendChild(cardMaker(result))
-    }) 
+    // .then(() => {
+    //     // cardMaker(allArticles)
+    //     console.log(allArticles)
+    // })
+    // .then(result => {
+    //     cards.appendChild(cardMaker(result))
+    // }) 
+
+    
