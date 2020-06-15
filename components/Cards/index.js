@@ -45,12 +45,12 @@ const cards = document.querySelector(".cards-container")
 function cardMaker(obj) {
     const card = document.createElement("div")
     card.className = "card"
-    //
     const result = innerHTML(obj, card)
+    // append result which is the current article to the DOM
     cards.appendChild(result)
 
 }
-
+// I used this helper function to be able to create each card before appending it inside of cardMaker()
 function innerHTML(el, card) {
     card.innerHTML += `
             <div class="headline">${el.headline}</div>
@@ -61,5 +61,6 @@ function innerHTML(el, card) {
             <span>By ${el.authorName}</span>
             </div>
         `
+        // return the individual card back which is stored into result var inside cardMaker
         return card
 }
